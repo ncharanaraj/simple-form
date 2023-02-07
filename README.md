@@ -39,3 +39,36 @@ Replaced the below code with {...formik.getFieldProps('name')}
 onChange={formik.handleChange}
 onBlur={formik.handleBlur}
 value={formik.values.name}
+
+Formik components:
+Formik
+Form
+Field
+ErrorMessage
+
+### Formik
+import formik and remove
+
+const formik = useFormik({
+        initialValues,
+        onSubmit,
+        validationSchema
+    })
+
+wrap form tag with formik componet. Pass initialvalues, onsubmit and validationschema as props.
+
+https://formik.org/docs/api/formik
+
+### Form
+import Form and replace form tag with Form. Which is small wrapper around an HTML <form> element that automatically hooks into Formik's handleSubmit and handleReset.
+
+https://formik.org/docs/api/form
+
+### Field
+import Field and replace each input tag with Field. Remove {...formik.getFieldProps('') because Field components do it internally
+https://formik.org/docs/api/field
+
+### ErrorMessage
+import ErrorMessage and replace {formik.touched.email && formik.errors.email ? (<div className='error'>{formik.errors.email}</div>) : null} with respect to their fields.
+
+https://formik.org/docs/api/errormessage
