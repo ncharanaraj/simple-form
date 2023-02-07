@@ -39,37 +39,46 @@ export default function YoutubeForm() {
         validate,
     })
 
-    // console.log("Formik values -", formik.values)
+    console.log("Formik errors -", formik.errors)
 
   return (
     <div>
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor='name'>Name</label>
-            <input
-                id='name'
-                type='text'
-                name='name'
-                onChange={formik.handleChange}
-                value={formik.values.name}
-            />
+            <div className='form-control'>
+                <label htmlFor='name'>Name</label>
+                <input
+                    id='name'
+                    type='text'
+                    name='name'
+                    onChange={formik.handleChange}
+                    value={formik.values.name}
+                />
+                {formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
+            </div>
 
-            <label htmlFor='email'>Email</label>
-            <input
-                id='email'
-                type='email'
-                name='email'
-                onChange={formik.handleChange}
-                value={formik.values.email}
-            />
+            <div className='form-control'>
+                <label htmlFor='email'>Email</label>
+                <input
+                    id='email'
+                    type='email'
+                    name='email'
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                />
+                {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
+            </div>
 
-            <label htmlFor='channel'>Channel</label>
-            <input
-                id='channel'
-                type='text'
-                name='channel'
-                onChange={formik.handleChange}
-                value={formik.values.channel}
-            />
+            <div className='form-control'>
+                <label htmlFor='channel'>Channel</label>
+                <input
+                    id='channel'
+                    type='text'
+                    name='channel'
+                    onChange={formik.handleChange}
+                    value={formik.values.channel}
+                />
+                {formik.errors.channel ? <div className='error'>{formik.errors.channel}</div> : null}
+            </div>
 
             <button type='submit'>Submit</button>
         </form>
