@@ -39,7 +39,7 @@ export default function YoutubeForm() {
         validate,
     })
 
-    console.log("Formik errors -", formik.errors)
+    console.log("visted -", formik.touched)
 
   return (
     <div>
@@ -51,6 +51,7 @@ export default function YoutubeForm() {
                     type='text'
                     name='name'
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.name}
                 />
                 {formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
@@ -63,6 +64,7 @@ export default function YoutubeForm() {
                     type='email'
                     name='email'
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.email}
                 />
                 {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
@@ -75,6 +77,7 @@ export default function YoutubeForm() {
                     type='text'
                     name='channel'
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.channel}
                 />
                 {formik.errors.channel ? <div className='error'>{formik.errors.channel}</div> : null}
