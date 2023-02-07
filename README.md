@@ -29,3 +29,13 @@ visited fields and improving UX
 Schema validation with YUP
  npm install yup --save
 https://formik.org/docs/tutorial#schema-validation-with-yup
+
+##Refactor
+
+https://formik.org/docs/migrating-v2#getfieldpropsnameorprops
+
+Replaced the below code with {...formik.getFieldProps('name')}
+
+onChange={formik.handleChange}
+onBlur={formik.handleBlur}
+value={formik.values.name}
