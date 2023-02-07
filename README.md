@@ -24,4 +24,8 @@ https://formik.org/docs/guides/validation
 
 Displaying error messages.
 
-visited fields.
+visited fields and improving UX
+
+Schema validation with YUP
+ npm install yup --save
+https://formik.org/docs/tutorial#schema-validation-with-yup
